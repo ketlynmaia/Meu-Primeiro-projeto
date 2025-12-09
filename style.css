@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #ffffff;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-hover-color: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg: url(./assets/moon-stars.svg);
+
+
+}
+
+.light {
+  --text-color: #000000;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-hover-color: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg: url(./assets/sun.svg);
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+  font-optical-sizing: auto;
+}
+
+body {
+  /* 
+  background-image: url("./assets/bg-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; 
+  */
+  /*
+  ou pode deixar tudo em uma linha só, como um atalho fazendo a mesma coisa:
+
+  background: color img url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+  */
+
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+  max-width: 588px;
+}
+
+/* para centralizar o conteúdo dentro do profile, sem ser pelo display block
+  #profile {
+    text-align: center;
+  }
+*/
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+
+#profile img {
+  display: block;
+  width: 120px;
+  margin: auto;
+}
+
+#profile p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 8px;
+}
+#switch {
+ position: relative;
+ width: 64px;;
+ margin: 4px auto;
+}
+
+#switch button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg) no-repeat center;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top:50%;
+  left: 0px;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  left: initial;
+  right: 0;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+  
+
+
+}
+
+
+ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  gap: 16px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text-color);
+
+  transition: background 0.2s;
+}
+
+ul li a:hover {
+  background: var(--surface-hover-color);
+  border: 1.5px solid var(--text-color);
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+#social-links a {
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color)
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
